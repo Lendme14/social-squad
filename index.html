@@ -1,41 +1,870 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Collab Platform</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to Social Collab</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#signup">Sign Up</a></li>
-                <li><a href="#login">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>About Our Platform</h2>
-        <p>Connecting content creators to grow together.</p>
-    </section>
-    
-    <section id="features">
-        <h2>Features</h2>
-        <ul>
-            <li>Cross-platform collaboration</li>
-            <li>Verified user system</li>
-            <li>Automated engagement tracking</li>
-        </ul>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 Social Collab. All rights reserved.</p>
-    </footer>
-</body>
-</html>
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pet Adoption</title>
+
+  
+
+  <!-- Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  
+
+  <!-- AOS (Animate on Scroll) CSS for scroll animations -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+
+    /* General Styles */
+
+    body {
+
+      font-family: 'Nunito', sans-serif;
+
+      background-color: #f4f8fb;
+
+      margin: 0;
+
+      overflow-x: hidden;
+
+    }
+
+    /* Sidebar Styles */
+
+    .sidebar {
+
+      height: 100%;
+
+      width: 0;
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      background-color: #222;
+
+      overflow-x: hidden;
+
+      transition: 0.5s;
+
+      padding-top: 30px;
+
+    }
+
+    .sidebar a {
+
+      padding: 8px 8px 8px 32px;
+
+      text-decoration: none;
+
+      font-size: 20px;
+
+      color: #fff;
+
+      display: block;
+
+      transition: 0.3s;
+
+    }
+
+    .sidebar a:hover {
+
+      color: #ff5733;
+
+    }
+
+    .sidebar .closebtn {
+
+      position: absolute;
+
+      top: 0;
+
+      right: 60px;
+
+      font-size: 36px;
+
+      color: #fff;
+
+      cursor: pointer;
+
+    }
+
+    /* Toggle button (hamburger) */
+
+    .menu-toggle {
+
+      font-size: px;
+
+      color: #333;
+
+      background-color: #ffcc00;
+
+      padding: none;
+
+      border: none;
+
+      cursor: pointer;
+
+      display: none;
+
+    }
+
+    /* Header */
+
+    header {
+
+      background-color: #ffcc00;
+
+      padding: 15px 30px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: left;
+
+    }
+
+    header .logo {
+
+      font-size: 24px;
+
+      font-weight: 610;
+
+      color: #ff;
+
+    }
+
+    /* Hero Section */
+
+    .hero {
+
+      background: url('pet-hero-image.jpg') no-repeat center center/cover;
+
+      padding: 100px 20px;
+
+      text-align: center;
+
+      color: #ff;
+
+    }
+
+    .hero h1 {
+
+      font-size: 20px;
+
+      font-weight: 600;
+
+      margin-bottom: 10px;
+
+    }
+
+    .cta-button {
+
+      background-color: #ff5733;
+
+      padding: 15px 30px;
+
+      font-size: 18px;
+
+      border: none;
+
+      color: yellow;
+
+      cursor: pointer;
+
+      text-transform: uppercase;
+
+      border-radius: 5px;
+
+      transition: background-color 0.3s;
+
+    }
+
+    .cta-button:hover {
+
+      background-color: #ff4c28;
+
+    }
+
+    /* Pet Grid Section */
+
+    .pet-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+      gap: 20px;
+
+      padding: 40px 20px;
+
+    }
+
+    .pet-card {
+
+      background: #fff;
+
+      border-radius: 10px;
+
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      overflow: hidden;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .pet-card img {
+
+      width: 100%;
+
+      height: 200px;
+
+      object-fit: cover;
+
+    }
+
+    .pet-card .info {
+
+      padding: 15px;
+
+    }
+
+    .pet-card:hover {
+
+      transform: translateY(-10px);
+
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    }
+
+    /* Footer */
+
+    footer {
+
+      background-color: #2a2a2a;
+
+      color: #fff;
+
+      padding: 10px 0;
+
+      text-align: center;
+
+    }
+
+    footer a {
+
+      color: #ffcc00;
+
+      text-decoration: none;
+
+      margin: 0 10px;
+
+    }
+
+    /* Responsive */
+
+    @media screen and (max-width: 768px) {
+
+      .menu-toggle {
+
+        display: block;
+
+      }
+
+      .sidebar a {
+
+        font-size: 15px;
+
+      }
+
+      .hero h1 {
+
+        font-size: 20px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+
+  <div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <a href="#">Home</a>
+
+    <a href="#">About Us</a>
+
+    <a href="#">Adopt</a>
+
+    <a href="#">Blog</a>
+
+    <a href="#">Shop</a>
+
+    <a href="#">Contact</a>
+
+  </div>
+
+  <!-- Toggle Button -->
+
+  <button class="menu-toggle" onclick="openNav()">&#9776; Menu</button>
+
+  <!-- Header -->
+
+  <header>
+
+    <div class="logo">morphy-pets</div>
+
+    <!-- Other contents of the header can go here -->
+
+  </header>
+
+  <!-- Hero Section -->
+
+  <section class="hero">
+
+    <h1 data-aos="fade-up">Find Your New Best Friend</h1>
+
+    <button class="cta-button" data-aos="fade-up" data-aos-delay="500">Adopt Now</button>
+
+  </section>
+
+  <!-- Pet Grid Section -->
+
+  <section class="pet-grid">
+
+    <div class="pet-card" data-aos="fade-up" data-aos-delay="300">
+
+      <img src="pet1.jpg" alt="Pet">
+
+      <div class="info">
+
+        <h3>Charlie</h3>
+
+        <p>Breed: Golden Retriever</p>
+
+        <p>Age: 2 years</p>
+
+      </div>
+
+    </div>
+
+    <div class="pet-card" data-aos="fade-up" data-aos-delay="400">
+
+      <img src="pet2.jpg" alt="Pet">
+
+      <div class="info">
+
+        <h3>Max</h3>
+
+        <p>Breed: Beagle</p>
+
+        <p>Age: 3 years</p>
+
+      </div>
+
+    </div>
+
+    <!-- More pet cards here -->
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>&copy; 2025 PetPal. All rights reserved.</p>
+
+    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+
+  </footer>
+
+  <!-- AOS (Animate on Scroll) JS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+
+    // Initialize AOS
+
+    AOS.init({
+
+      duration: 1000, // Animation duration
+
+      once: true,     // Trigger animation only once
+
+      offset: 200     // Offset for when the animation starts
+
+    });
+
+    // Sidebar toggle functions
+
+    function openNav() {
+
+      document.getElementById("mySidebar").style.width = "250px";
+
+    }
+
+    function closeNav() {
+
+      document.getElementById("mySidebar").style.width = "0";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pet Adoption</title>
+
+  
+
+  <!-- Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  
+
+  <!-- AOS (Animate on Scroll) CSS for scroll animations -->
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+
+    /* General Styles */
+
+    body {
+
+      font-family: 'Nunito', sans-serif;
+
+      background-color: #f4f8fb;
+
+      margin: 0;
+
+      overflow-x: hidden;
+
+    }
+
+    /* Sidebar Styles */
+
+    .sidebar {
+
+      height: 100%;
+
+      width: 0;
+
+      position: fixed;
+
+      top: 0;
+
+      left: 0;
+
+      background-color: #222;
+
+      overflow-x: hidden;
+
+      transition: 0.5s;
+
+      padding-top: 30px;
+
+    }
+
+    .sidebar a {
+
+      padding: 8px 8px 8px 32px;
+
+      text-decoration: none;
+
+      font-size: 20px;
+
+      color: #fff;
+
+      display: block;
+
+      transition: 0.3s;
+
+    }
+
+    .sidebar a:hover {
+
+      color: #ff5733;
+
+    }
+
+    .sidebar .closebtn {
+
+      position: absolute;
+
+      top: 0;
+
+      right: 60px;
+
+      font-size: 36px;
+
+      color: #fff;
+
+      cursor: pointer;
+
+    }
+
+    /* Toggle button (hamburger) */
+
+    .menu-toggle {
+
+      font-size: px;
+
+      color: #333;
+
+      background-color: #ffcc00;
+
+      padding: none;
+
+      border: none;
+
+      cursor: pointer;
+
+      display: none;
+
+    }
+
+    /* Header */
+
+    header {
+
+      background-color: #ffcc00;
+
+      padding: 15px 30px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: left;
+
+    }
+
+    header .logo {
+
+      font-size: 24px;
+
+      font-weight: 610;
+
+      color: #ff;
+
+    }
+
+    /* Hero Section */
+
+    .hero {
+
+      background: url('pet-hero-image.jpg') no-repeat center center/cover;
+
+      padding: 100px 20px;
+
+      text-align: center;
+
+      color: #ff;
+
+    }
+
+    .hero h1 {
+
+      font-size: 20px;
+
+      font-weight: 600;
+
+      margin-bottom: 10px;
+
+    }
+
+    .cta-button {
+
+      background-color: #ff5733;
+
+      padding: 15px 30px;
+
+      font-size: 18px;
+
+      border: none;
+
+      color: yellow;
+
+      cursor: pointer;
+
+      text-transform: uppercase;
+
+      border-radius: 5px;
+
+      transition: background-color 0.3s;
+
+    }
+
+    .cta-button:hover {
+
+      background-color: #ff4c28;
+
+    }
+
+    /* Pet Grid Section */
+
+    .pet-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+      gap: 20px;
+
+      padding: 40px 20px;
+
+    }
+
+    .pet-card {
+
+      background: #fff;
+
+      border-radius: 10px;
+
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      overflow: hidden;
+
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    .pet-card img {
+
+      width: 100%;
+
+      height: 200px;
+
+      object-fit: cover;
+
+    }
+
+    .pet-card .info {
+
+      padding: 15px;
+
+    }
+
+    .pet-card:hover {
+
+      transform: translateY(-10px);
+
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+
+    }
+
+    /* Footer */
+
+    footer {
+
+      background-color: #2a2a2a;
+
+      color: #fff;
+
+      padding: 10px 0;
+
+      text-align: center;
+
+    }
+
+    footer a {
+
+      color: #ffcc00;
+
+      text-decoration: none;
+
+      margin: 0 10px;
+
+    }
+
+    /* Responsive */
+
+    @media screen and (max-width: 768px) {
+
+      .menu-toggle {
+
+        display: block;
+
+      }
+
+      .sidebar a {
+
+        font-size: 15px;
+
+      }
+
+      .hero h1 {
+
+        font-size: 20px;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Sidebar -->
+
+  <div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <a href="#">Home</a>
+
+    <a href="#">About Us</a>
+
+    <a href="#">Adopt</a>
+
+    <a href="#">Blog</a>
+
+    <a href="#">Shop</a>
+
+    <a href="#">Contact</a>
+
+  </div>
+
+  <!-- Toggle Button -->
+
+  <button class="menu-toggle" onclick="openNav()">&#9776; Menu</button>
+
+  <!-- Header -->
+
+  <header>
+
+    <div class="logo">morphy-pets</div>
+
+    <!-- Other contents of the header can go here -->
+
+  </header>
+
+  <!-- Hero Section -->
+
+  <section class="hero">
+
+    <h1 data-aos="fade-up">Find Your New Best Friend</h1>
+
+    <button class="cta-button" data-aos="fade-up" data-aos-delay="500">Adopt Now</button>
+
+  </section>
+
+  <!-- Pet Grid Section -->
+
+  <section class="pet-grid">
+
+    <div class="pet-card" data-aos="fade-up" data-aos-delay="300">
+
+      <img src="pet1.jpg" alt="Pet">
+
+      <div class="info">
+
+        <h3>Charlie</h3>
+
+        <p>Breed: Golden Retriever</p>
+
+        <p>Age: 2 years</p>
+
+      </div>
+
+    </div>
+
+    <div class="pet-card" data-aos="fade-up" data-aos-delay="400">
+
+      <img src="pet2.jpg" alt="Pet">
+
+      <div class="info">
+
+        <h3>Max</h3>
+
+        <p>Breed: Beagle</p>
+
+        <p>Age: 3 years</p>
+
+      </div>
+
+    </div>
+
+    <!-- More pet cards here -->
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>&copy; 2025 PetPal. All rights reserved.</p>
+
+    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+
+  </footer>
+
+  <!-- AOS (Animate on Scroll) JS -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+
+    // Initialize AOS
+
+    AOS.init({
+
+      duration: 1000, // Animation duration
+
+      once: true,     // Trigger animation only once
+
+      offset: 200     // Offset for when the animation starts
+
+    });
+
+    // Sidebar toggle functions
+
+    function openNav() {
+
+      document.getElementById("mySidebar").style.width = "250px";
+
+    }
+
+    function closeNav() {
+
+      document.getElementById("mySidebar").style.width = "0";
+
+    }
+
+  </script>
+
+</body>
+
+</html>
