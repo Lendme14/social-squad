@@ -51,6 +51,23 @@
       background-color: #ff4c28;
     }
   </style>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+  });
+
+  // Sidebar toggle functions
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
 </head>
 <body>
   <div class="container">
