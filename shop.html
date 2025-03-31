@@ -59,24 +59,26 @@
       }
     }
   </style>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch("menu.html")
+      .then(response => response.text())
+      .then(data => {
+        document.body.insertAdjacentHTML('afterbegin', data);
+      });
+  });
+
+  // Sidebar toggle functions
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+  }
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+  }
+</script>
 </head>
-
 <body>
-
-  <!-- Sidebar Navigation -->
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="#">Adopt</a>
-    <a href="#">Blog</a>
-    <a href="#">Shop</a>
-    <a href="contact.html>Contact</a>
-  </div>
-
-  <!-- Toggle Button -->
-  <button class="menu-toggle" onclick="openNav()">☰ Menu</button>
-
+  
   <!-- Header -->
   <header>
     <div class="logo">morphy-pets</div>
