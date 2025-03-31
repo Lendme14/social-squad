@@ -1,103 +1,63 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
+<!DOCTYPE html><html lang="en">
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Pet Adoption</title>
-
-  
-
-  <!-- Google Fonts -->
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  
+  <title>Pet Adoption</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">  <!-- AOS (Animate on Scroll) CSS for scroll animations -->  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-
-  <!-- AOS (Animate on Scroll) CSS for scroll animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
- 
-  <body>
-    
+<body>
+  <!-- Sidebar Navigation -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#">Home</a>
-
     <a href="#">About Us</a>
-
     <a href="#">Adopt</a>
-
     <a href="#">Blog</a>
-
     <a href="#">Shop</a>
-
     <a href="#">Contact</a>
+  </div>  <!-- Toggle Button --><button class="menu-toggle" onclick="openNav()">☰ Menu</button>
 
-  </div>
-
-  <!-- Toggle Button -->
-
-  <button class="menu-toggle" onclick="openNav()">&#9776; Menu</button>
-
-  <!-- Header -->
-
-  <header>
-
+  <!-- Header -->  <header>
     <div class="logo">morphy-pets</div>
+  </header>  <!-- Product Grid Section -->  <section class="product-grid">
+    <div class="product-card" data-aos="fade-up">
+      <img src="product1.png" alt="Pet Product">
+      <div class="info">
+        <h3>Pet Toy</h3>
+        <p>Durable chew toy for dogs.</p>
+        <p class="price">$15.99</p>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div><div class="product-card" data-aos="fade-up" data-aos-delay="200">
+  <img src="product2.png" alt="Pet Product">
+  <div class="info">
+    <h3>Cat Bed</h3>
+    <p>Soft and cozy cat bed.</p>
+    <p class="price">$25.99</p>
+    <button class="buy-now">Buy Now</button>
+  </div>
+</div>
 
-    <!-- Other contents of the header can go here -->
+<!-- More products can be added here -->
 
-  </header>
-
- <!-- body goes here -->
-
-   
- <!-- body goes here -->
-
-  <footer>
-
+  </section>  <!-- Footer -->  <footer>
     <p>&copy; 2025 PetPal. All rights reserved.</p>
-
     <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-
-  </footer>
-
-  <!-- AOS (Animate on Scroll) JS -->
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <script>
-
+  </footer>  <!-- AOS (Animate on Scroll) JS -->  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     // Initialize AOS
-
     AOS.init({
-
       duration: 1000, // Animation duration
-
       once: true,     // Trigger animation only once
-
       offset: 200     // Offset for when the animation starts
-
     });
 
     // Sidebar toggle functions
     function openNav() {
-
       document.getElementById("mySidebar").style.width = "250px";
-
     }
 
     function closeNav() {
-
       document.getElementById("mySidebar").style.width = "0";
-
     }
-
-  </script>
-
-</body>
-
+  </script></body>
 </html>
