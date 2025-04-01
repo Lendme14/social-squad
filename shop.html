@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="cart/cart.css">
   <!-- AOS (Animate on Scroll) CSS for scroll animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -315,6 +315,15 @@
     function closeNav() {
       document.getElementById("mySidebar").style.width = "0";
     }
+  </script>
+  <script src="cart/cart.js"></script>
+  <script>
+    // Load cart HTML
+    fetch('cart/cart.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('cart-container').innerHTML = data;
+      });
   </script>
 </body>
 
