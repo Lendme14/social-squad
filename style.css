@@ -51,6 +51,9 @@ body {
 
 /* Toggle button (hamburger) */
 .menu-toggle {
+  position: fixed; /* Make the button fixed */
+  top: 10px; /* Adjust the top position as needed */
+  left: 10px; /* Adjust the left position as needed */
   font-size: 24px;
   color: #333;
   background-color: #ffcc00;
