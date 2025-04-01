@@ -12,14 +12,11 @@
       background: url('image/purchase.jpg') no-repeat center center fixed;
       background-size: cover;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 20px;
     }
     .container {
       max-width: 600px;
+      margin: 0 auto 40px auto; /* Add bottom margin to prevent touching the footer */
       padding: 20px;
       background-color: rgba(255, 255, 255, 0.2); /* Make the form more transparent */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,6 +38,7 @@
     .form-group input,
     .form-group textarea {
       width: 100%;
+      min-width: 350px; /* Set a minimum width */
       padding: 10px;
       border: 2px solid #ccc;
       border-radius: 5px;
