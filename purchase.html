@@ -18,9 +18,10 @@
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8); /* Make the form transparent */
+      background-color: rgba(255, 255, 255, 0.2); /* Make the form more transparent */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
+      backdrop-filter: blur(10px); /* Apply blur to the background image */
     }
     .form-group {
       margin-bottom: 15px;
@@ -28,6 +29,7 @@
     .form-group label {
       display: block;
       margin-bottom: 5px;
+      color: white; /* White text */
     }
     .form-group input,
     .form-group textarea {
@@ -35,6 +37,12 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      background: transparent;
+      color: white; /* White text */
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: white; /* White placeholder text */
     }
     .form-group textarea {
       resize: vertical;
@@ -77,31 +85,31 @@
     <form action="send_email.php" method="POST">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
       </div>
       <div class="form-group">
         <label for="mobile">Mobile Number:</label>
-        <input type="tel" id="mobile" name="mobile" required>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
       </div>
       <div class="form-group">
         <label for="address">Complete Address:</label>
-        <textarea id="address" name="address" rows="4" required></textarea>
+        <textarea id="address" name="address" rows="4" placeholder="Enter your address" required></textarea>
       </div>
       <div class="form-group">
         <label for="product">Product:</label>
-        <input type="text" id="product" name="product" required>
+        <input type="text" id="product" name="product" placeholder="Enter product name" required>
       </div>
       <div class="form-group">
         <label for="quantity">Quantity:</label>
-        <input type="number" id="quantity" name="quantity" required>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" required>
       </div>
       <div class="form-group">
         <label for="message">Message:</label>
-        <textarea id="message" name="message" rows="4"></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Enter your message"></textarea>
       </div>
       <div class="form-group">
         <button type="submit">Submit</button>
