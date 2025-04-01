@@ -107,5 +107,32 @@
       </div>
     </form>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PetPal. All rights reserved.</p>
+    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+  </footer>
+
+  <!-- AOS (Animate on Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true,     // Trigger animation only once
+      offset: 200     // Offset for when the animation starts
+    });
+
+    // Sidebar toggle functions
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
 </body>
+
 </html>
